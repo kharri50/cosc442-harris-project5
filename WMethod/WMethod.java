@@ -391,23 +391,13 @@ public class WMethod{
      
     
      for(int i = 0; i < maxStates; i++){
-	     Utilities.runFSM(FSM, startState, spaceSplit(1,"",tests.get(i)), " ");
-	     }
+	     Utilities.runFSM(FSM, startState, tests.get(i).replaceAll("", " ").trim(), " ");
+	    }
    }// End of main()
    
   
    
-   public static String spaceSplit(int index, String subString, String remainder) {
-	  if(remainder.length()==1) {
-		  // return modified substring
-		  return subString+" "+remainder.charAt(0);
-	  }else {
-		  subString = subString + " " + remainder.charAt(index);
-		  remainder = remainder.substring(index, remainder.length());
-		  return spaceSplit(index++, subString, remainder);  
-	  }
-   }
-  
+
 }//End of class WMethod
 
 
