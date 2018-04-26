@@ -393,11 +393,33 @@ public class WMethod{
      for(int i = 0; i < maxStates; i++){
 	     Utilities.runFSM(FSM, startState, tests.get(i).replaceAll("", " ").trim(), " ");
 	    }
+     
+     // code to dynamically create JUnit tests 
+     
+     Iterator <String> testItr = tests.iterator();
+     int i = 0;
+     while(testItr.hasNext()) {
+    	 String currentTest = testItr.next().replaceAll(""," ").trim();
+    	 
+    	 System.out.println("@Test"); // generate header for junit test case
+    	 //genOutputPattern()
+    	 System.out.println("public void testCase"+i+"(){");
+    	 // check if the output pattern contains yes
+    	 if(Utilities.genOutputPattern(FSM, startState, currentTest , " " , "yes")) {
+    		 System.out.println("\tassetTrue(bond.bondRegex(\""+currentTest+"\"));");
+    	 }else {
+    		 System.out.println("\tassetFalse(bond.bondRegex(\""+currentTest+"\"));");
+    	 }
+    	 System.out.println("}\n");
+    	 i++;
+    	 
+     }
    }// End of main()
    
   
    
 
+   
 }//End of class WMethod
 
 
