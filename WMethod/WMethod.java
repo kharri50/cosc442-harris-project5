@@ -406,9 +406,9 @@ public class WMethod{
     	 System.out.println("public void testCase"+i+"(){");
     	 // check if the output pattern contains yes
     	 if(Utilities.genOutputPattern(FSM, startState, currentTest , " " , "yes")) {
-    		 System.out.println("\tassetTrue(bond.bondRegex(\""+currentTest+"\"));");
+    		 System.out.println("\tassertTrue(bond.bondRegex(\""+currentTest+"\"));");
     	 }else {
-    		 System.out.println("\tassetFalse(bond.bondRegex(\""+currentTest+"\"));");
+    		 System.out.println("\tassertFalse(bond.bondRegex(\""+currentTest+"\"));");
     	 }
     	 System.out.println("}\n");
     	 i++;

@@ -36,7 +36,7 @@ public class main {
 	}
 	
 	/* This function automatically generates the test 
-	 * crietera for use with the W-Method. It's a lot faster
+	 * Criteria for use with the W-Method. It's a lot faster
 	 * than manually defining everything.
 	 */
 	
